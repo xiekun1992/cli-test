@@ -1,0 +1,17 @@
+{
+  "name": "cli-test-xx",
+  "version": "1.1.5",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "xk": "./bin/app"
+  },
+  "scripts": {
+    "start":"node ./server/server"
+  },
+  "author": "ordinary_sdibt",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}

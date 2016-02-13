@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var colors = require('colors'); 
+var app = require('../app');
+var fs = require('fs');
+
+var args=process.argv.slice(2);
+args[1]=args[1] || 'app';
+var dest=process.cwd()+'\\'+args[1];
+
+var showHelp=()=>{
+  console.log([
+    'usage: xk [options] [dirname]',
+    '',
+    '  -e            Establish a program in current folder',
+    '  -v --version  Print current version.',
+    '',
+    '  -h --help     Print this list and exit.'
+  ].join('\n').green);
+  process.exit();
+}
+
+
+switch(args[0]){
+	case '-e':app.checkProgramFolder(null,dest);break;
+	case '-v':;
+	case '--version':app.printVersion();break;
+	default:showHelp();
+}
